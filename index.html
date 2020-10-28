@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>the fuq</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+
+    
+  </head>
+  <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+    <button onclick="window.location = 'https://venice-and-death.github.io/1301'">1301</button>
+    <button onclick="window.location = 'https://venice-and-death.github.io/8000'">Dante</button>
+    <button onclick="window.location = 'https://venice-and-death.github.io/8201'">Collage</button>
+</div>
+    
+  <body>
+   
+    <a-scene
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-marker 
+        preset="hiro"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
+        <a-entity
+          position="0 0 0"
+          scale="0.000005 0.000005 0.000005"
+          obj-model="obj: url(https://venice-and-death.github.io/objectmodels/fraud-illusionatthegate/fraud illusions at the gate.obj); 
+            mtl: url(https://venice-and-death.github.io/objectmodels/fraud-illusionatthegate/fraud illusions at the gate.mtl)"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
